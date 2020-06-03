@@ -15,6 +15,10 @@ const routes = [{
     name: 'weather',
     component: Weather
   },
+  {
+    path: '*',
+    redirect: '/'
+  },
 ];
 
 const router = new VueRouter({
