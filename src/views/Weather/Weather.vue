@@ -57,7 +57,7 @@ export default {
         return;
       } else {
         this.error = "";
-        fetch(`${this.base_url}weather?q=${this.homeCityInput},,&appid=${this.api_key}`)
+        fetch(`${this.base_url}weather?q=${this.homeCityInput}&appid=${this.api_key}`)
           .then(res => {
             if (!res.ok) {
               this.error = "City not found, please type a new one";
@@ -71,13 +71,13 @@ export default {
       }
     },
     destinationCityEvent: function() {
-      if (parseInt(this.destinationCityInput).toString() === this.homeCityInput) {
+      if (parseInt(this.destinationCityInput).toString() === this.destinationCityInput) {
         this.error = "City not found, please type a new one";
         this.destinationCityInput = "";
         return;
       } else {
         this.error = "";
-        fetch(`${this.base_url}weather?q=${this.destinationCityInput},,&appid=${this.api_key}`)
+        fetch(`${this.base_url}weather?q=${this.destinationCityInput}&appid=${this.api_key}`)
           .then(res => {
             if (!res.ok) {
               this.error = "City not found, please type a new one";

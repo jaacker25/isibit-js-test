@@ -45,6 +45,7 @@
   }
   
   .InputBox {
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,8 +55,57 @@
     padding: 15px;
     padding-top: 0;
     background: #42ad0438;
+    box-shadow: 0px 0px 35px rgba(255, 255, 255, 0.555);
   }
   
+.helpBtn{
+    position: relative;
+    width:30px;
+    height: 30px;
+    fill: white;
+    opacity: 0.9;
+    border: solid 1px white;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.helpBtn:hover{
+    background:#449a43;
+}
+
+.helpTag {
+    display: inline;
+    position: relative;
+  }
+  
+  .helpTag:hover:after {
+    background: #143655;
+    opacity: 0.8;
+    border-radius: 15px;
+    bottom: -137px;
+    color: #fff;
+    content: attr(glose);
+    left: -280%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 330px;
+  }
+  
+  .helpTag:hover:before {
+    border: solid;
+    border-color: #143655 transparent;
+    border-width: 0 6px 6px 6px;
+    bottom: -4px;
+    content: "";
+    left: 38%;
+    position: absolute;
+    z-index: 99;
+  }
+
+
+
   .searcher {
     margin: 8px;
     opacity: 0.6;
@@ -151,6 +201,7 @@
     border: solid 2px white;
     border-radius: 15px;
     background: #06368288;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.555);
   }
 
 .forecastImg{
@@ -194,4 +245,5 @@
     bottom: 25px;
     margin-bottom: 25px;
     margin-top: 50px;
+    box-shadow: 0px 0px 5px rgba(0, 255, 0, 0.555);
   }
