@@ -1,8 +1,10 @@
 <div class="weather">
     <div class="weatherIntern">
+        <!--Titulos, nombre de la app y desarrollador-->
         <div class="titlesAndSearch">
             <h1>WELCOME TO WEATHER APP</h1>
             <h5>by: Jorge Aguilar</h5>
+            <!--Caja de Busqueda-->
             <div class="InputBox">
                 <h3 class="currentDateTitle">Current Date</h3>
                 <h2 class="currentDateData">{{ currentDate }}</h2>
@@ -18,10 +20,8 @@
                         @keypress.enter="destinationCityEvent" @click="clearDestinationCityEvent" />
                 </div>
 
-                <a class="helpTag" glose="To start type the city and press enter. To get a more presice result try to search by city name and country code divided by comma, example:         
-                 London, uk |
-                 Tokyo, jp |
-                 Paris, fr">
+                <a class="helpTag"
+                    glose="To start type the city and press enter. To get a more accurate result try to search by city name and country code divided by comma, example: London, uk | Tokyo, jp | Paris, fr">
                     <svg class="bi bi-question helpBtn" data-toggle="popover" data-trigger="focus" title="Hola"
                         width="3rem" height="2em" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -29,18 +29,14 @@
                     </svg>
                 </a>
 
-
-
-
-
-
             </div>
             <div v-if="error != ''" class="alert alert-danger" role="alert">
                 {{ showAlert() }}
             </div>
         </div>
-
+        <!--Segmento para los resultados de las busquedas, dividido en dos partes-->
         <div class="data">
+            <!--Seccion de Resultados para HOME CITY-->
             <div v-if="showHomeCityName == true" class="homeCityData">
                 <h4 class="cityName">{{ homeCityInput }}</h4>
                 <div v-for="item in homeCityHourly" v-bind:key="item.dt" class="forecastDiv">
@@ -57,10 +53,7 @@
                     </div>
                 </div>
             </div>
-
-            <!--
-<List ref="c" v-bind:cityData="{cityInput:this.homeCityInput, showCityName:this.showHomeCityName}"/>
--->
+            <!--Seccion de Resultados para DESTINATION CITY-->
             <div v-if="showDestinationCityName == true" class="destinationCityData">
                 <h4 class="cityName">{{ destinationCityInput }}</h4>
                 <div v-for="item in destinationCityHourly" v-bind:key="item.dt" class="forecastDiv">
@@ -78,6 +71,7 @@
                 </div>
             </div>
         </div>
+        <!--Boton de Regreso-->
         <router-link to="/">
             <button type="button" class="btn btn-outline-success returnBtn">RETURN</button>
         </router-link>

@@ -1,3 +1,4 @@
+/*Fondo de la aplicacion*/
 .weather {
     background-image: url("https://res.cloudinary.com/jaacker25/image/upload/v1591133456/ISIBIT/background_d8i3hf.jpg");
     height: auto;
@@ -6,9 +7,9 @@
     background-size: cover;
     margin: 0;
     padding: 0;
-  }
-  
-  .weatherIntern {
+}
+
+.weatherIntern {
     width: 100%;
     min-height: 100vh;
     height: auto;
@@ -17,24 +18,26 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .titlesAndSearch {
+}
+
+/*Titulos, nombre de la app y desarrolladores*/
+.titlesAndSearch {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
-  
-  .titlesAndSearch h1 {
+}
+
+.titlesAndSearch h1 {
     margin-top: 25px;
     text-align: center;
     letter-spacing: 1.5vw;
     font-size: 3vw;
     font-weight: 900;
     text-shadow: 0.5vw 0.7vw 10px;
-  }
-  .titlesAndSearch h5 {
+}
+
+.titlesAndSearch h5 {
     margin-top: 8px;
     margin-bottom: 35px;
     text-align: center;
@@ -42,9 +45,10 @@
     font-size: 2vw;
     font-weight: 400;
     text-shadow: 0.5vw 0.7vw 10px;
-  }
-  
-  .InputBox {
+}
+
+/*Caja de Busqueda*/
+.InputBox {
     margin-top: 25px;
     display: flex;
     justify-content: center;
@@ -56,11 +60,54 @@
     padding-top: 0;
     background: #42ad0438;
     box-shadow: 0px 0px 35px rgba(255, 255, 255, 0.555);
-  }
-  
-.helpBtn{
+}
+
+.searcher {
+    margin: 8px;
+    opacity: 0.6;
+}
+
+.searcher:hover {
+    opacity: 0.9;
+}
+
+.input-group {
+    width: 300px;
+}
+
+.currentDateTitle,
+.currentDateData {
+    margin-top: 18px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 900;
+    opacity: 0.9;
+}
+
+.currentDateData {
+    margin-top: 0;
+}
+
+/*Caja de Alerta*/
+.alert {
+    margin-top: 18px;
+    opacity: 0.9;
+    border-radius: 15px;
+    position: absolute;
+    top: 368px;
+    z-index: 25;
+}
+
+@media screen and (max-width: 800px) {
+    .alert {
+        top: 318px;
+    }
+}
+
+/*Caja de Ayuda*/
+.helpBtn {
     position: relative;
-    width:30px;
+    width: 30px;
     height: 30px;
     fill: white;
     opacity: 0.9;
@@ -70,16 +117,16 @@
     cursor: pointer;
 }
 
-.helpBtn:hover{
-    background:#449a43;
+.helpBtn:hover {
+    background: #449a43;
 }
 
 .helpTag {
     display: inline;
     position: relative;
-  }
-  
-  .helpTag:hover:after {
+}
+
+.helpTag:hover:after {
     background: #143655;
     opacity: 0.8;
     border-radius: 15px;
@@ -91,9 +138,9 @@
     position: absolute;
     z-index: 98;
     width: 330px;
-  }
-  
-  .helpTag:hover:before {
+}
+
+.helpTag:hover:before {
     border: solid;
     border-color: #143655 transparent;
     border-width: 0 6px 6px 6px;
@@ -102,48 +149,10 @@
     left: 38%;
     position: absolute;
     z-index: 99;
-  }
+}
 
-
-
-  .searcher {
-    margin: 8px;
-    opacity: 0.6;
-  }
-  .searcher:hover {
-    opacity: 0.9;
-  }
-  
-  .input-group {
-    width: 300px;
-  }
-  
-  .currentDateTitle,
-  .currentDateData {
-    margin-top: 18px;
-    color: white;
-    letter-spacing: 2px;
-    font-weight: 900;
-    opacity: 0.9;
-  }
-  .currentDateData {
-    margin-top: 0;
-  }
-  
-  .alert {
-    margin-top: 18px;
-    opacity: 0.9;
-    border-radius: 15px;
-    position: absolute;
-    top: 368px;
-    z-index: 25;
-  }
-  @media screen and (max-width: 800px) {
-    .alert {
-      top: 318px;
-    }
-  }
-  .data {
+/*Segmento para los resultados de las busquedas, dividido en dos partes*/
+.data {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -151,18 +160,18 @@
     width: 100%;
     color: white;
     opacity: 0.7;
-  }
-  
-  .homeCityData,
-  .destinationCityData {
+}
+
+.homeCityData,
+.destinationCityData {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
-  .cityName {
+}
+
+.cityName {
     font-weight: 600;
     letter-spacing: 2px;
     text-shadow: 0.5vw 0.5vw 3.5px black;
@@ -174,19 +183,22 @@
     text-align: center;
     font-size: 2.5vw;
     width: 100%;
-  }
-  @media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 600px) {
     .cityName {
-      font-size: 4vw;
+        font-size: 4vw;
     }
-  }
-  @media screen and (max-width: 850px) and (min-width: 601px) {
+}
+
+@media screen and (max-width: 850px) and (min-width: 601px) {
     .cityName {
-      font-size: 3.5vw;
+        font-size: 3.5vw;
     }
-  }
-  
-  .forecastDiv {
+}
+
+/*Caja que conforma cada item de las busquedas*/
+.forecastDiv {
     margin-bottom: 18px;
     margin-left: 2px;
     margin-right: 2px;
@@ -202,48 +214,50 @@
     border-radius: 15px;
     background: #06368288;
     box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.555);
-  }
+}
 
-.forecastImg{
+.forecastImg {
     width: 70px;
     opacity: 1;
 }
 
-  .forecastData {
+.forecastData {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-  }
-  .forecastDataTime {
+}
+
+.forecastDataTime {
     letter-spacing: 2px;
     padding-bottom: 3px;
     font-weight: 600;
-  }
-  
-  .forecastDataTemp,
-  .forecastDataRH {
+}
+
+.forecastDataTemp,
+.forecastDataRH {
     padding-bottom: 2px;
     letter-spacing: 1px;
     font-size: 0.9rem;
-  }
-  
-  .forecastDataDescription {
+}
+
+.forecastDataDescription {
     padding-top: 1px;
     font-size: 0.8rem;
     letter-spacing: 0px;
-  }
-  
-  .forecastData h6 {
+}
+
+.forecastData h6 {
     margin: 0;
     line-height: 16px;
-  }
-  
-  .returnBtn {
+}
+
+/*Boton de Regreso*/
+.returnBtn {
     border-radius: 15px;
     padding: 10px 20px;
     bottom: 25px;
     margin-bottom: 25px;
     margin-top: 50px;
     box-shadow: 0px 0px 5px rgba(0, 255, 0, 0.555);
-  }
+}

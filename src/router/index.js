@@ -5,8 +5,7 @@ import Weather from '../views/Weather/Weather.vue';
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'home',
     component: Home

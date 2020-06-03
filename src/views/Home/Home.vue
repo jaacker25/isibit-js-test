@@ -10,7 +10,12 @@
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  data() {
+    return {
+      publicPath: process.env.BASE_URL
+    };
+  }
 };
 </script>
 
@@ -51,9 +56,9 @@ export default {
 }
 
 .logoHome {
-  background-image: url("../../assets/logo.png");
+  background-image: url("https://res.cloudinary.com/jaacker25/image/upload/v1591187983/ISIBIT/logo_enqeta.png");
   background-size: contain;
-  opacity: 100%;
+  opacity: 1;
   width: 100%;
   height: 100%;
   display: flex;
@@ -64,7 +69,7 @@ export default {
 
 h1 {
   color: white;
-  opacity: 75%;
+  opacity: 0.75;
   font-size: 1.4rem;
   font-weight: 800;
 
