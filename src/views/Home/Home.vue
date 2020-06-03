@@ -1,13 +1,10 @@
 <template>
   <div class="home">
     <router-link to="/weather" class="logoHomeBackLayer">
-
       <div class="logoHome">
-        <h1>G&nbsp;E&nbsp;T&nbsp;&nbsp;I&nbsp;N</h1>
+        <h1>G E T ∙ I N</h1>
       </div>
-
     </router-link>
-
   </div>
 </template>
 
@@ -40,21 +37,21 @@ export default {
 
   border: solid 2px rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  box-shadow:black 5px 5px 100px;
+  box-shadow: black 5px 5px 100px;
   transition: 0.3s ease-in;
   text-decoration: none;
 }
-.logoHomeBackLayer:hover{
+.logoHomeBackLayer:hover {
   border: solid 2px #f1b434;
-  box-shadow:black 5px 5px 90px;
+  box-shadow: black 5px 5px 90px;
 }
 
-.logoHomeBackLayer:hover h1{
+.logoHomeBackLayer:hover h1 {
   color: #f1b434;
 }
 
 .logoHome {
-  background-image: url("../assets/logo.png");
+  background-image: url("../../assets/logo.png");
   background-size: contain;
   opacity: 100%;
   width: 100%;
@@ -68,7 +65,7 @@ export default {
 h1 {
   color: white;
   opacity: 75%;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
 
   width: 100%;

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
-import Weather from '../views/Weather.vue';
+import Home from '../views/Home/Home.vue';
+import Weather from '../views/Weather/Weather.vue';
 
 Vue.use(VueRouter);
 

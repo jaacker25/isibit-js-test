@@ -1,0 +1,72 @@
+<div class="weather">
+    <div class="weatherIntern">
+        <div class="titlesAndSearch">
+            <h1>WELCOME TO WEATHER APP</h1>
+            <h5>by: Jorge Aguilar</h5>
+            <div class="InputBox">
+                <h3 class="currentDateTitle">Current Date</h3>
+                <h2 class="currentDateData">{{ currentDate }}</h2>
+                <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control searcher" placeholder="HOME CITY" aria-label="homeCity"
+                        aria-describedby="addon-wrapping" v-model="homeCityInput" @keypress.enter="homeCityEvent"
+                        @click="clearHomeCityEvent" />
+                </div>
+                <!--
+@keypress.enter="$refs.c.cityEvent()"
+-->
+                <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control searcher" placeholder="DESTINATION CITY"
+                        aria-label="homeCity" aria-describedby="addon-wrapping" v-model="destinationCityInput"
+                        @keypress.enter="destinationCityEvent" @click="clearDestinationCityEvent" />
+                </div>
+            </div>
+            <div v-if="error != ''" class="alert alert-danger" role="alert">
+                {{ showAlert() }}
+            </div>
+        </div>
+
+        <div class="data">
+            <div v-if="showHomeCityName == true" class="homeCityData">
+                <h4 class="cityName">{{ homeCityInput }}</h4>
+                <div v-for="item in homeCityHourly" v-bind:key="item.dt" class="forecastDiv">
+                    <img :src="base_url_icon + item.weather[0].icon + '@2x.png'"
+                        alt="temp" class="forecastImg" />
+                    <div class="forecastData">
+                        <h6 class="forecastDataTime">{{ msToLocalTime(item.dt) }} hrs</h6>
+                        <h6 class="forecastDataTemp">
+                            Temp: <b>{{ kelvinToCelcius(item.temp) }}°C</b>
+                        </h6>
+                        <h6 class="forecastDataRH">
+                            RH: <b>{{ item.humidity }}%</b>
+                        </h6>
+                        <h6 class="forecastDataDescription">{{ item.weather[0].description }}</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<List ref="c" v-bind:cityData="{cityInput:this.homeCityInput, showCityName:this.showHomeCityName}"/>
+-->
+            <div v-if="showDestinationCityName == true" class="destinationCityData">
+                <h4 class="cityName">{{ destinationCityInput }}</h4>
+                <div v-for="item in destinationCityHourly" v-bind:key="item.dt" class="forecastDiv">
+                    <img :src="base_url_icon + item.weather[0].icon + '@2x.png'"
+                        alt="temp" class="forecastImg" />
+                    <div class="forecastData">
+                        <h6 class="forecastDataTime">{{ msToLocalTime(item.dt) }} hrs</h6>
+                        <h6 class="forecastDataTemp">
+                            Temp: <b>{{ kelvinToCelcius(item.temp) }}°C</b>
+                        </h6>
+                        <h6 class="forecastDataRH">
+                            RH: <b>{{ item.humidity }}%</b>
+                        </h6>
+                        <h6 class="forecastDataDescription">{{ item.weather[0].description }}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <router-link to="/">
+            <button type="button" class="btn btn-outline-success returnBtn">RETURN</button>
+        </router-link>
+    </div>
+</div>
